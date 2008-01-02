@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CodePeek - Google Code Search for Adobe RIA Developers
+     Copyright(c) 2007 FutureScale, Inc., All rights reserved. -->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:view="com.futurescale.codepeek.view.components.*"	
+	xmlns:mvc="com.futurescale.codepeek.*"	
+	layout="absolute" 
+	visible="{showControls}" 
+	backgroundColor="#FFFFFF" 
+	showEffect="{slideInEffect}"
+	backgroundGradientColors="[#FFFFFF, #000033]"
+	applicationComplete="facade.startup(this)" // start the application
+>
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.effects.easing.Exponential;
+			import org.puremvc.patterns.observer.Notification;
+			import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
+			
+			public static const TREE_ITEM_SELECTED:String = "treeItemSelected";
+			
+			[Bindable] public var currentURL:String = "http://codepeek.futurescale.com/";
+			[Bindable] public var showControls:Boolean = false; 
+			[Bindable] public var minX:Number = 800;
+			[Bindable] public var minY:Number = 600;
+			
+			// Create the singleton instance of our ApplicationFacade.
+			// Note this is the first call, which causes the instantiation 
+			// and initialization of the PureMVC Model, View, and Controller
+			// Singletons, as well as our Proxies and Mediators 
+			private var facade:ApplicationFacade = ApplicationFacade.getInstance();
+	
+						
+		]]>
+	</mx:Script>
+
+	<!-- Applicaton Intro Effect -->
+	<mx:Move id="slideInEffect" yFrom="5000" 
+		easingFunction="{Exponential.easeOut}" duration="1300"/>
+	
+	<!-- The Application Control Bar -->
+	<view:AppControlBar id="controlBar"/>
+	
+	<!-- The Content Box -->
+	<mx:HDividedBox top="10" right="10" bottom="35" left="10">
+	
+		<!-- The Searches Tree -->	
+		<mx:Tree id="tree" labelField="@name" height="100%" width="20%" 
+			itemClick="dispatchEvent( new Event( TREE_ITEM_SELECTED, true ) )"/>
+		
+		<!-- The Browser -->
+		<mx:HTML width="80%" height="100%" id="browser" 
+			location="{currentURL}" borderStyle="solid"/>
+		
+	</mx:HDividedBox>
+
+	<!-- Copyright -->
+	<mx:HBox bottom="10" right="10" horizontalAlign="right" width="100%" >
+		<mx:LinkButton color="#FFFFFF" fontWeight="normal" label="Copyright (c) 2007, FutureScale, Inc." click="browser.location='http://codepeek.futurescale.com/'"/>
+	</mx:HBox>
+
+
+</mx:Application>
