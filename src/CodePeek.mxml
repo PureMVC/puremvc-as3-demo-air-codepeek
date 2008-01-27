@@ -9,7 +9,7 @@
 	backgroundColor="#FFFFFF" 
 	showEffect="{slideInEffect}"
 	backgroundGradientColors="[#FFFFFF, #000033]"
-	applicationComplete="facade.startup(this)" // start the application
+	applicationComplete="facade.startup(this)" 
 >
 	
 	<mx:Script>
