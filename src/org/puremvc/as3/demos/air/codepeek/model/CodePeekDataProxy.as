@@ -1,14 +1,14 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek.model
 {
-	import flash.filesystem.File
-	import flash.filesystem.FileMode
-	import flash.filesystem.FileStream;
-
-	import org.puremvc.interfaces.*;
-	import mx.collections.XMLListCollection;
+	import flash.filesystem.File;
+	
+	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy;
 
 	/** 
 	 * Manages the XML database for CodePeek Application data. 
@@ -17,9 +17,9 @@ package org.puremvc.as3.demos.air.codepeek.model
 	 * It also implements the <code>IProxy</code> interface allowing it to be
 	 * accessed via the Model.</P>
 	 * 
-	 * @see org.puremvc.as3.demos.air.codepeek.model.AbstractXMLDatabaseProxy AbstractXMLDatabaseProxy
+	 * @see org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy XMLDatabaseProxy
 	 */
-	public class CodePeekDataProxy extends AbstractXMLDatabaseProxy implements IProxy
+	public class CodePeekDataProxy extends XMLDatabaseProxy
 	{
 		public static const NAME:String = 'CodePeekDataProxy';
 		
@@ -34,7 +34,7 @@ package org.puremvc.as3.demos.air.codepeek.model
 		 */ 
 		public function CodePeekDataProxy( ) {
 			super( NAME );
-			initXMLDatabase( "CodePeekData.xml", File.applicationStorageDirectory );
+			initialize( "CodePeekData.xml", File.applicationStorageDirectory );
 		}
 
 		/**
@@ -46,7 +46,7 @@ package org.puremvc.as3.demos.air.codepeek.model
 		 * and discovers it doesn't exist.</P>
 		 *
 		 */
-		override protected function buildXMLDatabase():XML
+		override protected function build():XML
 		{
 			// The database structure
 			var dbXML:XML =
@@ -70,7 +70,7 @@ package org.puremvc.as3.demos.air.codepeek.model
 		/**
 		 * Parse the XML database into Proxies.  
 		 */
-		override protected function parseXMLDatabase():void
+		override protected function parse():void
 		{
 			facade.registerProxy( new SearchesProxy( xml.Searches ) );
 		}

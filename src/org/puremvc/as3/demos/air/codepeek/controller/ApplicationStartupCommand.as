@@ -1,10 +1,12 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek.controller
 {
-	import org.puremvc.patterns.command.*;
-	import org.puremvc.interfaces.*;
+	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.patterns.command.*;
 
 	/**
 	 * A MacroCommand executed when the application starts.
@@ -39,8 +41,8 @@ package org.puremvc.as3.demos.air.codepeek.controller
 		 */
 		override protected function initializeMacroCommand() :void
 		{
-			addSubCommand( org.puremvc.as3.demos.air.codepeek.controller.ModelPrepCommand );
-			addSubCommand( org.puremvc.as3.demos.air.codepeek.controller.ViewPrepCommand );
+			addSubCommand( ModelPrepCommand );
+			addSubCommand( ViewPrepCommand );
 		}
 		
 	}

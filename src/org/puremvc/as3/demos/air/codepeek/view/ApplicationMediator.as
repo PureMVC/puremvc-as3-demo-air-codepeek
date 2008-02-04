@@ -1,5 +1,7 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek.view
 {
@@ -12,8 +14,8 @@ package org.puremvc.as3.demos.air.codepeek.view
 	import mx.managers.PopUpManager;
 	import mx.collections.XMLListCollection;
 
-	import org.puremvc.interfaces.*;
-	import org.puremvc.patterns.mediator.Mediator;
+	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.patterns.mediator.*;
 
 	import org.puremvc.as3.demos.air.codepeek.view.components.*;
 	import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
@@ -63,7 +65,7 @@ package org.puremvc.as3.demos.air.codepeek.view
 		{
 			// pass the viewComponent to the superclass where 
 			// it will be stored in the inherited viewComponent property
-			super( viewComponent );
+			super( NAME, viewComponent );
 
 			// Create and register Mediators for the Stage and
 			// components that were instantiated by the mxml application
@@ -82,22 +84,6 @@ package org.puremvc.as3.demos.air.codepeek.view
 
 		}
 
-
-		/**
-		 * Get the Mediator name.
-		 * <P>
-		 * Called by the framework to get the name of this
-		 * mediator. If there is only one instance, we may
-		 * define it in a constant and return it here. If
-		 * there are multiple instances, this method must
-		 * return the unique name of this instance.</P>
-		 * 
-		 * @return String the Mediator name
-		 */
-		override public function getMediatorName():String
-		{
-			return ApplicationMediator.NAME;
-		}
 		
 		/**
 		 * List all notifications this Mediator is interested in.

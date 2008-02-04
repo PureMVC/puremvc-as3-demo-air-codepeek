@@ -1,5 +1,7 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek.model
 {
@@ -8,8 +10,8 @@ package org.puremvc.as3.demos.air.codepeek.model
 	import mx.rpc.events.FaultEvent;
 	import mx.collections.XMLListCollection;
 
-	import org.puremvc.interfaces.*;
-	import org.puremvc.patterns.proxy.Proxy;
+	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.patterns.proxy.Proxy;
 	
 	import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
 	

@@ -1,15 +1,15 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek
 {
-	import org.puremvc.interfaces.*;
-	import org.puremvc.patterns.proxy.*;
-	import org.puremvc.patterns.facade.*;
-
-	import org.puremvc.as3.demos.air.codepeek.view.*;
-	import org.puremvc.as3.demos.air.codepeek.model.*;
+	import org.puremvc.as3.patterns.facade.*;
+	import org.puremvc.as3.utilities.air.xmldb.controller.*;
 	import org.puremvc.as3.demos.air.codepeek.controller.*;
+	import org.puremvc.as3.demos.air.codepeek.model.*;
+	import org.puremvc.as3.demos.air.codepeek.view.*;
 
 	/**
 	 * A concrete <code>Facade</code> for the <code>CodePeek</code> application.
@@ -61,18 +61,17 @@ package org.puremvc.as3.demos.air.codepeek
 		override protected function initializeController( ) : void 
 		{
 			super.initializeController();			
-			registerCommand( APP_STARTUP, 
-							org.puremvc.as3.demos.air.codepeek.controller.ApplicationStartupCommand );
-			registerCommand( APP_SHUTDOWN, 
-							org.puremvc.as3.demos.air.codepeek.controller.ApplicationShutdownCommand );
+			registerCommand( APP_STARTUP,  ApplicationStartupCommand );
+			registerCommand( APP_SHUTDOWN, ApplicationShutdownCommand );
+			registerCommand( PersistDataCommand.NAME, PersistDataCommand );
 		}
 		
 		/**
 		 * The view hierarchy has been built, so start the application.
 		 */
-		public function startup(app:CodePeek):void
+		public function startup( app:CodePeek ):void
 		{
-			facade.notifyObservers ( new Notification( ApplicationFacade.APP_STARTUP, app ) );
+			sendNotification( APP_STARTUP, app );
 		}
 		
 		

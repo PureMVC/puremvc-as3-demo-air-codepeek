@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- CodePeek - Google Code Search for Adobe RIA Developers
-     Copyright(c) 2007 FutureScale, Inc., All rights reserved. -->
+<!-- 
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
+ -->
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
-	xmlns:view="com.futurescale.codepeek.view.components.*"	
-	xmlns:mvc="com.futurescale.codepeek.*"	
+	xmlns:view="org.puremvc.as3.demos.air.codepeek.view.components.*"	
 	layout="absolute" 
 	visible="{showControls}" 
 	backgroundColor="#FFFFFF" 
@@ -15,12 +17,11 @@
 	<mx:Script>
 		<![CDATA[
 			import mx.effects.easing.Exponential;
-			import org.puremvc.patterns.observer.Notification;
 			import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
 			
 			public static const TREE_ITEM_SELECTED:String = "treeItemSelected";
 			
-			[Bindable] public var currentURL:String = "http://codepeek.futurescale.com/";
+			[Bindable] public var currentURL:String = "http://trac.puremvc.org/Demo_AS3_AIR_CodePeek/";
 			[Bindable] public var showControls:Boolean = false; 
 			[Bindable] public var minX:Number = 800;
 			[Bindable] public var minY:Number = 600;
@@ -57,7 +58,7 @@
 
 	<!-- Copyright -->
 	<mx:HBox bottom="10" right="10" horizontalAlign="right" width="100%" >
-		<mx:LinkButton color="#FFFFFF" fontWeight="normal" label="Copyright (c) 2007, FutureScale, Inc." click="browser.location='http://codepeek.futurescale.com/'"/>
+		<mx:LinkButton color="#FFFFFF" fontWeight="normal" label="Powered by PureMVC." click="browser.location='http://trac.puremvc.org/PureMVC'"/>
 	</mx:HBox>
 
 

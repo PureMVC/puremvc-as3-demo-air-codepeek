@@ -1,13 +1,14 @@
 /*
- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved.
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.air.codepeek.model
 {
-	import flash.filesystem.File
-	import flash.filesystem.FileMode
-	import flash.filesystem.FileStream;
-
-	import org.puremvc.interfaces.*;
+	import flash.filesystem.File;
+	
+	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy;
 
 	/** 
 	 * Manages the main XML database for CodePeek Preferences
@@ -16,9 +17,9 @@ package org.puremvc.as3.demos.air.codepeek.model
 	 * It also implements the <code>IProxy</code> interface allowing it to be
 	 * accessed via the Model.</P>
 	 * 
-	 * @see org.puremvc.as3.demos.air.codepeek.model.AbstractXMLDatabaseProxy AbstractXMLDatabaseProxy
+	 * @see org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy XMLDatabaseProxy
 	 */
-	public class CodePeekPrefsProxy extends AbstractXMLDatabaseProxy implements IProxy
+	public class CodePeekPrefsProxy extends XMLDatabaseProxy
 	{
 		public static const NAME:String = 'CodePeekPrefsProxy';
 		
@@ -33,13 +34,13 @@ package org.puremvc.as3.demos.air.codepeek.model
 		 */ 
 		public function CodePeekPrefsProxy( ) {
 			super( NAME );
-			initXMLDatabase( "CodePeekPrefs.xml", File.applicationStorageDirectory );	
+			initialize( "CodePeekPrefs.xml", File.applicationStorageDirectory );	
 		}
 
 		/**
 		 * Buld a blank XML Prefs database
 		 */
-		override protected function buildXMLDatabase():XML
+		override protected function build():XML
 		{
 			var dbXML:XML =	
 			<CPPreferences xsi:noNamespaceSchemaLocation="http://schemas.futurescale.com/codepeek/v1/CPPreferences.xsd" 
@@ -54,7 +55,7 @@ package org.puremvc.as3.demos.air.codepeek.model
 		/**
 		 * Parse the XML database into Proxies.  
 		 */
-		override protected function parseXMLDatabase():void
+		override protected function parse():void
 		{
 			facade.registerProxy( new WindowMetricsProxy( xml.WindowMetrics ) );
 		}

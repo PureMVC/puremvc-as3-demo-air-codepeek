@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- CodePeek - Copyright(c) 2007 FutureScale, Inc., All rights reserved. -->
+<!-- 
+  CodePeek - Google Code Search for Adobe RIA Developers
+  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Your reuse is governed by the Creative Commons Attribution 3.0 License
+ -->
 <mx:ApplicationControlBar xmlns:mx="http://www.adobe.com/2006/mxml" dock="true">
 	
 	<mx:Script>
