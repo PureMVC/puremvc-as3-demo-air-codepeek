@@ -78,6 +78,16 @@ package org.puremvc.as3.demos.air.codepeek.model
 			} else {
 				search = new XMLList( cursor.current );
 			}
+			
+			// WTF???? Adobe is inserting cruft into the XML!!!  
+			// comment out the following 2 lines to see what 
+			// shows up. In the tree it looks like goooglespew,
+			// but the debugger shows its a node in namespace 
+			// 'mx_internal_uid'. So strip out children of the
+			// search node in this namespace before returning...
+			namespace mx_internal_uid;
+			delete search.children();
+			
 			return search as XMLList;			
 		}
 		

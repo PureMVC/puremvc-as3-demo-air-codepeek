@@ -50,8 +50,7 @@ package org.puremvc.as3.demos.air.codepeek.model
 		{
 			// The database structure
 			var dbXML:XML =
-			<CPDatabase xsi:noNamespaceSchemaLocation="http://schemas.futurescale.com/codepeek/v1/CPDatabase.xsd" 
-						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+			<CodePeek/>
 						
 			// Build an initial Searches block that contains all the 
 			// search options defined in the CodeSearchProxy
