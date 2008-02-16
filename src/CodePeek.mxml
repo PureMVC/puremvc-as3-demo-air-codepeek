@@ -21,7 +21,7 @@
 			
 			public static const TREE_ITEM_SELECTED:String = "treeItemSelected";
 			
-			[Bindable] public var currentURL:String = "http://trac.puremvc.org/Demo_AS3_AIR_CodePeek/";
+			[Bindable] public var currentURL:String = "http://trac.puremvc.org/Demo_AS3_AIR_CodePeek/wiki/ReleaseNotes";
 			[Bindable] public var showControls:Boolean = false; 	
 					
 			private var facade:ApplicationFacade = ApplicationFacade.getInstance();
