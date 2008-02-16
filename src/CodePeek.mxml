@@ -22,14 +22,8 @@
 			public static const TREE_ITEM_SELECTED:String = "treeItemSelected";
 			
 			[Bindable] public var currentURL:String = "http://trac.puremvc.org/Demo_AS3_AIR_CodePeek/";
-			[Bindable] public var showControls:Boolean = false; 
-			[Bindable] public var minX:Number = 800;
-			[Bindable] public var minY:Number = 600;
-			
-			// Create the singleton instance of our ApplicationFacade.
-			// Note this is the first call, which causes the instantiation 
-			// and initialization of the PureMVC Model, View, and Controller
-			// Singletons, as well as our Proxies and Mediators 
+			[Bindable] public var showControls:Boolean = false; 	
+					
 			private var facade:ApplicationFacade = ApplicationFacade.getInstance();
 	
 						

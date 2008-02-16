@@ -6,10 +6,15 @@
 package org.puremvc.as3.demos.air.codepeek
 {
 	import org.puremvc.as3.patterns.facade.*;
-	import org.puremvc.as3.utilities.air.xmldb.controller.*;
+
 	import org.puremvc.as3.demos.air.codepeek.controller.*;
 	import org.puremvc.as3.demos.air.codepeek.model.*;
 	import org.puremvc.as3.demos.air.codepeek.view.*;
+	
+	import org.puremvc.as3.utilities.air.xmldb.controller.*;
+
+	import org.puremvc.as3.utilities.air.desktopcitizen.DesktopCitizenConstants;
+	import org.puremvc.as3.utilities.air.desktopcitizen.controller.WindowOpenCommand;
 
 	/**
 	 * A concrete <code>Facade</code> for the <code>CodePeek</code> application.
@@ -30,18 +35,9 @@ package org.puremvc.as3.demos.air.codepeek
 	{
 		
 		// Notification name constants
-		public static const APP_STARTUP:String			= "appStartup";
-		public static const APP_SHUTDOWN:String			= "appShutdown";
+		public static const STARTUP:String				= "startup";
+		public static const SHUTDOWN:String				= "shutdown";
 		
-		public static const MODEL_PERSIST_PREFS:String	= "modelPersistPrefs";
-		public static const MODEL_PERSIST_DB:String		= "modelPersistDB";
-		
-		public static const VIEW_SET_DEFAULT:String		= "viewSetDefault";
-		public static const VIEW_SET_BOUNDS:String		= "viewSetBounds";
-		public static const VIEW_SET_FULLSCREEN:String	= "viewSetFullScreen";
-		public static const VIEW_SHOW_WINDOW:String		= "viewShowWindow";
-		public static const VIEW_SHOW_CONTROLS:String	= "viewShowControls";
-
 		public static const CODE_SEARCH_SUCCESS:String	= "codeSearchSuccess";
 		public static const CODE_SEARCH_FAILED:String	= "codeSearchFailed";
 		public static const SEARCH_TYPE_SELECTED:String	= "searchTypeSelected";
@@ -60,20 +56,23 @@ package org.puremvc.as3.demos.air.codepeek
 		 */
 		override protected function initializeController( ) : void 
 		{
-			super.initializeController();			
-			registerCommand( APP_STARTUP,  ApplicationStartupCommand );
-			registerCommand( APP_SHUTDOWN, ApplicationShutdownCommand );
+			super.initializeController();
+					
+			registerCommand( STARTUP,  StartupCommand );
+			registerCommand( SHUTDOWN, ShutdownCommand );
 			registerCommand( PersistDataCommand.NAME, PersistDataCommand );
+			
+			registerCommand( DesktopCitizenConstants.WINDOW_OPEN, WindowOpenCommand );
+			registerCommand( DesktopCitizenConstants.WINDOW_CLOSED, ShutdownCommand );
 		}
-		
+
 		/**
 		 * The view hierarchy has been built, so start the application.
 		 */
 		public function startup( app:CodePeek ):void
 		{
-			sendNotification( APP_STARTUP, app );
+			sendNotification( STARTUP, app );
 		}
-		
 		
 	}
 }

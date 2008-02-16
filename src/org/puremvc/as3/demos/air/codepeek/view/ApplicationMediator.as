@@ -5,22 +5,16 @@
  */
 package org.puremvc.as3.demos.air.codepeek.view
 {
-	import flash.geom.Point;
 	import flash.events.Event;
-	import flash.geom.Rectangle;
-
-	import mx.controls.Image;
-	import mx.styles.StyleManager;
-	import mx.managers.PopUpManager;
-	import mx.collections.XMLListCollection;
-
+	
 	import org.puremvc.as3.interfaces.*;
 	import org.puremvc.as3.patterns.mediator.*;
 
-	import org.puremvc.as3.demos.air.codepeek.view.components.*;
 	import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
-	import org.puremvc.as3.demos.air.codepeek.model.CodeSearchProxy;
-	import org.puremvc.as3.demos.air.codepeek.model.SearchesProxy;
+	import org.puremvc.as3.demos.air.codepeek.view.components.*;
+	import org.puremvc.as3.demos.air.codepeek.model.*;
+	
+	import org.puremvc.as3.utilities.air.desktopcitizen.DesktopCitizenConstants;
 	
 	/**
 	 * A Mediator for interacting with the top level Application.
@@ -69,7 +63,7 @@ package org.puremvc.as3.demos.air.codepeek.view
 
 			// Create and register Mediators for the Stage and
 			// components that were instantiated by the mxml application
-			facade.registerMediator( new StageMediator( app.stage ) );	
+//			facade.registerMediator( new StageMediator( app.stage ) );	
 			facade.registerMediator( new AppControlBarMediator( app.controlBar ) );	
 			
 			// retrieve and cache a reference to frequently accessed proxys
@@ -84,7 +78,6 @@ package org.puremvc.as3.demos.air.codepeek.view
 
 		}
 
-		
 		/**
 		 * List all notifications this Mediator is interested in.
 		 * <P>
@@ -96,7 +89,7 @@ package org.puremvc.as3.demos.air.codepeek.view
 		override public function listNotificationInterests():Array 
 		{
 			
-			return [ ApplicationFacade.VIEW_SHOW_WINDOW,
+			return [ DesktopCitizenConstants.WINDOW_READY,
 					 ApplicationFacade.CODE_SEARCH_SUCCESS 
 				   ];
 		}
@@ -115,7 +108,7 @@ package org.puremvc.as3.demos.air.codepeek.view
 			switch ( note.getName() ) {
 				
 				// Time to show the application window
-				case ApplicationFacade.VIEW_SHOW_WINDOW:
+				case DesktopCitizenConstants.WINDOW_READY:
 					app.showControls = true;
 					break;
 

@@ -17,7 +17,7 @@ package org.puremvc.as3.demos.air.codepeek.controller
 	 * Persist the Prefs and Data DBs </P>
 	 * 
 	 */
-	public class ApplicationShutdownCommand extends SimpleCommand
+	public class ShutdownCommand extends SimpleCommand
 	{
 		
 		/**
@@ -26,7 +26,6 @@ package org.puremvc.as3.demos.air.codepeek.controller
 		override public function execute( note:INotification ) :void	
 		{
 			sendNotification( PersistDataCommand.NAME, CodePeekDataProxy.NAME  );
-			sendNotification( PersistDataCommand.NAME, CodePeekPrefsProxy.NAME  );
 		}
 		
 	}
