@@ -6,12 +6,14 @@
 package org.puremvc.as3.demos.air.codepeek.controller
 {
 
-	import org.puremvc.as3.demos.air.codepeek.*;
-	import org.puremvc.as3.demos.air.codepeek.model.*;
-	import org.puremvc.as3.demos.air.codepeek.view.*;
 	import org.puremvc.as3.interfaces.*;
 	import org.puremvc.as3.patterns.command.*;
 	import org.puremvc.as3.patterns.observer.*;
+
+	import org.puremvc.as3.demos.air.codepeek.*;
+	import org.puremvc.as3.demos.air.codepeek.model.*;
+	import org.puremvc.as3.demos.air.codepeek.view.*;
+
 	import org.puremvc.as3.utilities.air.desktopcitizen.DesktopCitizenConstants;
 	
 	/**
