@@ -12,7 +12,7 @@
 	showEffect="{slideInEffect}"
 	backgroundGradientColors="[#FFFFFF, #000033]"
 	applicationComplete="facade.startup(this)" 
->
+ viewSourceURL="srcview/index.html">
 	
 	<mx:Script>
 		<![CDATA[
