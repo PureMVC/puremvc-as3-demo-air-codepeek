@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
   CodePeek - Google Code Search for Adobe RIA Developers
-  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Copyright(c) 2007-10 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  -->
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
 	xmlns:view="org.puremvc.as3.demos.air.codepeek.view.components.*"	
 	layout="absolute" 
-	visible="{showControls}" 
+	showStatusBar="false"
+	visible="{showControls}"
 	backgroundColor="#FFFFFF" 
-	showEffect="{slideInEffect}"
 	backgroundGradientColors="[#FFFFFF, #000033]"
 	applicationComplete="facade.startup(this)" 
 >
 	
 	<mx:Script>
 		<![CDATA[
+			import mx.effects.Fade;
 			import mx.effects.easing.Exponential;
 			import org.puremvc.as3.demos.air.codepeek.ApplicationFacade;
 			
@@ -30,10 +31,6 @@
 		]]>
 	</mx:Script>
 
-	<!-- Applicaton Intro Effect -->
-	<mx:Move id="slideInEffect" yFrom="5000" 
-		easingFunction="{Exponential.easeOut}" duration="1300"/>
-	
 	<!-- The Application Control Bar -->
 	<view:AppControlBar id="controlBar"/>
 	
@@ -55,5 +52,4 @@
 		<mx:LinkButton color="#FFFFFF" fontWeight="normal" label="Powered by PureMVC." click="browser.location='http://trac.puremvc.org/PureMVC'"/>
 	</mx:HBox>
 
-
-</mx:Application>
+</mx:WindowedApplication>

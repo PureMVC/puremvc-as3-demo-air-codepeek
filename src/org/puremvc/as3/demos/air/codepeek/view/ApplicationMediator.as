@@ -63,7 +63,6 @@ package org.puremvc.as3.demos.air.codepeek.view
 
 			// Create and register Mediators for the Stage and
 			// components that were instantiated by the mxml application
-//			facade.registerMediator( new StageMediator( app.stage ) );	
 			facade.registerMediator( new AppControlBarMediator( app.controlBar ) );	
 			
 			// retrieve and cache a reference to frequently accessed proxys

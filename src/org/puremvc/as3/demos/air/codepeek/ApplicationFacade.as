@@ -60,7 +60,6 @@ package org.puremvc.as3.demos.air.codepeek
 					
 			registerCommand( STARTUP,  StartupCommand );
 			registerCommand( SHUTDOWN, ShutdownCommand );
-			registerCommand( PersistDataCommand.NAME, PersistDataCommand );
 			
 			registerCommand( DesktopCitizenConstants.WINDOW_OPEN, WindowOpenCommand );
 			registerCommand( DesktopCitizenConstants.WINDOW_CLOSED, ShutdownCommand );

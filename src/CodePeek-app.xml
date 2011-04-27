@@ -30,7 +30,7 @@
 	<!-- <description></description> -->
 
 	<!-- Copyright information. Optional -->
-	<copyright>Copyright(c) 2007-08 Cliff Hall, Some rights reserved.</copyright>
+	<copyright>Copyright(c) 2007-10 Cliff Hall, Some rights reserved.</copyright>
 
 	<!-- Settings for the application's initial window. Required. -->
 	<initialWindow>
@@ -48,7 +48,7 @@
 		<!-- <transparent></transparent> -->
 
 		<!-- Whether the window is initially visible. Optional. Default false. -->
-		<!-- <visible></visible> -->
+		<visible>false</visible>
 
 		<!-- Whether the user can minimize the window. Optional. Default true. -->
 		<!-- <minimizable></minimizable> -->
