@@ -7,7 +7,7 @@ This demo illustrates the use of the PureMVC framework within an Adobe AIR deskt
 ![PureMVC AS3 Demo: CodePeek](http://puremvc.org/pages/images/screenshots/PureMVC-Shot-AS3-AIR-CodePeek.png)
 
 ## Status
-Production - [Version 2.0](https://github.com/PureMVC/puremvc-as3-demo-air-codepeek/blob/master/version.txt)
+Production - [Version 2.0](https://github.com/PureMVC/puremvc-as3-demo-air-codepeek/blob/master/VERSION)
 
 ## PureMVC Utilities Used
 * [Desktop Citizen](https://github.com/PureMVC/puremvc-as3-util-air-desktopcitizen/wiki)
