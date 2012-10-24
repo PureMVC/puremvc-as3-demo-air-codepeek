@@ -1,0 +1,11 @@
+ PureMVC AS2 Unit Tests Ported
+--------------------------------------------------------------------------
+Release Date: 4/25/08
+    Platform: ActionScript 2 
+     Version: 0 
+    Revision: 7
+      Author: James Knight <james.knight@puremvc.org>
+--------------------------------------------------------------------------
+0.7 - Upgraded tests to use AsUnit25 - jamesk
+0.6 - Unit tests imported with documentation - jamesk
+0.5 - Checked in initial folder structure and license - CLH
