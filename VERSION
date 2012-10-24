@@ -1,11 +1,26 @@
- PureMVC AS2 Unit Tests Ported
+PureMVC AS3 / AIR Demo - CodePeek
 --------------------------------------------------------------------------
-Release Date: 4/25/08
-    Platform: ActionScript 2 
-     Version: 0 
-    Revision: 7
-      Author: James Knight <james.knight@puremvc.org>
+Release Date: 03/08/08
+    Platform: ActionScript 3  
+     Version: 2
+    Revision: 0
+      Author: Cliff Hall <clifford.hall@puremvc.org>
 --------------------------------------------------------------------------
-0.7 - Upgraded tests to use AsUnit25 - jamesk
-0.6 - Unit tests imported with documentation - jamesk
-0.5 - Checked in initial folder structure and license - CLH
+2.0 - Updated to AIR 1.0 / PureMVC 2.0.1
+1.9 - Updated with latest DesktopCitizen and XMLDatabase utilities
+1.8 - Works with AIR Beta 3 and PureMVC 2.0
+      Refactored package space from com.futurescale to org.puremvc.
+      Migrated to PureMVC for AS3 2.0
+      Refactored window metrics handling into an AIR utility called DesktopCitizen. 
+      Refactored XML Database handling into an AIR utility called XMLDatabase.
+      
+1.7 - Works with AIR Beta 2.
+1.6 - Bleeding edge AIR Beta minor update.
+1.5 - Refactored to take advantage of the first functional enhancement to the PureMVC framework. 
+1.4 - Updated for AIR/Flex 3.
+1.3 - Refactoring of the ViewDisplayStateChangedCommand logic into StageMediator
+      Refactoring of the ViewResizedCommand logic into StageMediator
+1.2 - Refactoring of AbstractDatabaseProxy.
+1.1 - Minor UI tweaks.
+1.0 - Initial release. Works with Apollo alpha. 
+      
