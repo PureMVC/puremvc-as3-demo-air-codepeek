@@ -21,9 +21,9 @@ Production - [Version 2.0](https://github.com/PureMVC/puremvc-as3-demo-air-codep
 * [Google Code API](http://code.google.com/)
 
 ## License
-* PureMVC AS3 / AIR Demo - CodePeek Copyright(c) 2007 Cliff Hall
-* PureMVC - Copyright(c) 2007-2008 Futurescale, Inc.
-All rights reserved.
+* PureMVC AS3 / AIR Demo - CodePeek Copyright © 2007 Cliff Hall
+* PureMVC - Copyright © 2007-2008 Futurescale, Inc.
+* All rights reserved.
 
 * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
